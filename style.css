@@ -34,10 +34,13 @@ body{
   padding: 100px;
   border-radius: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center; /*flex item을 수직 방향으로 정렬 */
+  justify-content: center; /*주축을 기준으로 flex item을 수평정렬 */
+  /*align-content:교차축을 기준으로 flex item을 수직정렬*/
+  flex-direction: row;  /* flex container의 주축 방향을 설정(기본값은 row)*/
+  /*flex-wrap: 줄넘김 처리 설정 */
+  /*flex-flow: flex-direction과 flex-wrap의 단축속성 */
+  justify-content: space-between; 
 }
 @media (max-width:600px) {
   .wrapper {
@@ -52,6 +55,15 @@ body{
   }
 }
 
+/*flex item 속성
+order: flex item의 배치순서 지정
+flex-grow: flex item의 너비에 대한 확대 인자 지정 (기본값 0)
+flex-shrink: flex item의 너비에 대한 축소 인자 지정 (기본값 1)
+flex-basis: flex item의 기본크기 지정
+flex: 위 3개 속성의 단축속성
+align-self: 수직축으로 flex item 정렬
+*/
+
 .wrapper .img-area{
   height: 200px;
   width: 200px;
@@ -60,7 +72,7 @@ body{
   align-items: center;
   justify-content: center;
 }
-@media (max-width:600px) {
+@media (max-width:600px) {    /*뷰포트 가로너비가 600px 이하인 경우 적용 */
   .wrapper .img-area {
     height: 90px;
     width: 90px;
@@ -71,6 +83,12 @@ body{
 
   }
 }
+
+/* 
+미디어쿼리: 접속하는 디바이스나 뷰포트에 따라 특정 css를 적용
+@media [only ㅣnot] 미디어 유형 [and 조건] * [and 조건]
+
+*/
 
 .img-area .inner-area{
   height: calc(100% - 25px);
